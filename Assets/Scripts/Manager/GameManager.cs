@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public static LuaManager mMgrLua;
+    public static ResManager mMgrRes;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     void Init()
     {
         mMgrLua = LuaManager.Instance;
+        mMgrRes = ResManager.Instance;
     }
 
     void Start()
@@ -29,5 +31,8 @@ public class GameManager : MonoBehaviour
     {
         //管理器启动
     }
+
+
+    
 }
 

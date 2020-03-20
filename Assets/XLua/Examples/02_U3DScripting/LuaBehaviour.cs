@@ -47,7 +47,7 @@ namespace XLuaTest
             scriptEnv.SetMetaTable(meta);
             meta.Dispose();
 
-            scriptEnv.Set("self", this);
+            scriptEnv.Set("self", this); 
             foreach (var injection in injections)
             {
                 scriptEnv.Set(injection.name, injection.value);

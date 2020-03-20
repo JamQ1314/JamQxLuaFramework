@@ -26,3 +26,5 @@
 #*.meta
 
 # Unity3D Generated File On Crash Reports
+/Logs
+/Packages

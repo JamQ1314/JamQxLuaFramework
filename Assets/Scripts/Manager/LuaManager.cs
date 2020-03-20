@@ -22,4 +22,7 @@ public class LuaManager: UnitySingleton<LuaManager>
         return System.Text.Encoding.UTF8.GetBytes(fpath);
     }
 
+    public void CallLuaFunc()
+    {
+    }
 }
