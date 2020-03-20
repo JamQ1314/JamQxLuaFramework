@@ -1,0 +1,90 @@
+print("hello samplescene")
+local pb=require "pb"
+local protoc=require "protoc"
+
+--method1
+--assert(protoc:load [[
+	--message Phone {
+	--optional string name        = 1;
+	--optional int64  phonenumber = 2;
+	--}
+	--message Person {
+	--optional string name     = 1;
+	--optional int32  age      = 2;
+	--optional string address  = 3;
+	--repeated Phone  contacts = 4;
+--} ]])
+
+--local data = {
+	--name = 'ilse',
+	--age  = 18,
+	--contacts = {
+		--{ name = 'alice', phonenumber = 12312341234 },
+		--{ name = 'bob',   phonenumber = 45645674567 }
+	--}
+--}
+
+--local bytes = assert(pb.encode('Person', data))
+--print(pb.tohex(bytes))
+
+--local data2 = assert(pb.decode('Person', bytes))
+--print(data2.name)
+--print(data2.age)
+--print(data2.address)
+--print(data2.contacts[1].name)
+--print(data2.contacts[1].phonenumber)
+--print(data2.contacts[2].name)
+--print(data2.contacts[2].phonenumber)
+
+
+--method2
+--local protocontent = CS.AResLoader.LoadProto("nameage.proto")
+--protoc:load(protocontent)
+
+--local data = {
+	--id = 99,
+	--name = "zhangsan"
+	--}
+--local bytes = assert(pb.encode('Name', data))
+--print(pb.tohex(bytes))
+--local data2 = assert(pb.decode('Name', bytes))
+--print(data2.id)
+--print(data2.name)
+
+--local data3 = {
+	--id = 88,
+	--age= 22,
+	--}
+--local bytes2 = assert(pb.encode('Age', data3))
+--print(pb.tohex(bytes2))
+--local data4 = assert(pb.decode('Age', bytes2))
+--print(data4.id)
+--print(data4.age)
+
+
+--method3
+--local protocontent = CS.AResLoader.LoadProto("pb3")
+--protoc:load(protocontent)
+
+--local data = {
+--id = 99,
+--name = "zhangsan"
+--}
+--local bytes = assert(pb.encode('People.Name', data))
+--print(pb.tohex(bytes))
+--local data2 = assert(pb.decode('People.Name', bytes))
+--print(data2.id)
+--print(data2.name)
+
+--method4
+assert(pb.loadfile "ATest/Resources/pb3.txt")
+
+--local data = {
+--id = 99,
+--name = "zhangsan"
+--}
+--local bytes = assert(pb.encode('People.Name', data))
+--print(pb.tohex(bytes))
+--local data2 = assert(pb.decode('People.Name', bytes))
+--print(data2.id)
+--print(data2.name)
